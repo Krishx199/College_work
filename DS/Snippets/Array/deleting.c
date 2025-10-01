@@ -1,31 +1,28 @@
 #include <stdio.h>
-int a[100];
 int b[100];
 
-// inserting at the back
-void insertback(int val, int* lower_bound , int* upper_bound){
-    if (*lower_bound==-1 && *upper_bound==-1){
-        (*lower_bound) +=1;
-        (*upper_bound) +=1;
-        b[*upper_bound]=val;
-    }
-    else{
-        *upper_bound+=1;
-        b[*upper_bound]=val;
-    }
+// deleting from the back
+void delete(int* upper_bound){
+    if (*upper_bound==-1) printf("nothing to delete");
+    else *upper_bound-=1;
 }
 
 //inserting at the front or in the middle 
 // btw this can work for inserting at the back too if you give position pos=upper_bound+1;
 //! here the pos is sequential position and not index 
 void insert(int val , int pos , int* lower_bound , int* upper_bound){
-    int i = (*upper_bound)+1; // (no. of elements) n = upper_bound +1 and the max index will always be n-1
+
+    int i = (*upper_bound)+1; // no. of elements = upper_bound +1
     while (i>=pos){
         b[i]=b[i-1];
         i--;
     }
     *upper_bound+=1;
     b[pos-1]=val;
+
+    for (int i=*lower_bound ; i<=*upper_bound ; i++){
+        printf("%d ",b[i]);
+    }
 }
 
 int main(){
@@ -34,8 +31,7 @@ int main(){
     int lower_bound=-1 , upper_bound=-1; 
     for (int i=0 ;i<5 ; i++){
         insertback(i,&lower_bound,&upper_bound);
-    } 
-    // b={0,1,2,3,4}
+    }
 
     // printf("%d %d\n",lower_bound,upper_bound);
     for (int i=lower_bound ; i<=upper_bound ; i++){
@@ -44,14 +40,7 @@ int main(){
     printf("\n");
 
     //inserting in the middle
-    insert(10,2,&lower_bound,&upper_bound); //! here the pos is sequential position and not index 
-    // b={0,10,1,2,3,4}
-
-    // printf("%d %d\n",lower_bound,upper_bound);
-    for (int i=lower_bound ; i<=upper_bound ; i++){
-        printf("%d ",b[i]);
-    }
-    printf("\n");
+    insert(10,4,&lower_bound,&upper_bound); //! here the pos is sequential position and not index 
 
 
 }   
