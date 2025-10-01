@@ -17,15 +17,15 @@ void insertback(int val, int* lower_bound , int* upper_bound){
 
 //inserting at the front or in the middle 
 // btw this can work for inserting at the back too if you give position pos=upper_bound+1;
-//! here the pos is sequential position and not index 
-void insert(int val , int pos , int* lower_bound , int* upper_bound){
+//! here pos argument is the index
+void insert(int val , int pos , int* upper_bound){
     int i = (*upper_bound)+1; // (no. of elements) n = upper_bound +1 and the max index will always be n-1
-    while (i>=pos){
+    while (i>pos){
         b[i]=b[i-1];
         i--;
     }
     *upper_bound+=1;
-    b[pos-1]=val;
+    b[pos]=val;
 }
 
 int main(){
@@ -44,7 +44,7 @@ int main(){
     printf("\n");
 
     //inserting in the middle
-    insert(10,2,&lower_bound,&upper_bound); //! here the pos is sequential position and not index 
+    insert(10,1,&upper_bound); //! here pos argument is the index 
     // b={0,10,1,2,3,4}
 
     // printf("%d %d\n",lower_bound,upper_bound);
