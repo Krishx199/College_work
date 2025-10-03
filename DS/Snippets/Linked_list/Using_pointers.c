@@ -107,7 +107,7 @@ void add_end(Link_list *l , int x){
     new_node->val=x;
     new_node->next=NULL;
     l->tail->next=new_node;
-    l->tail=new_node;
+    l->tail=new_node; // updating tail as new node is added 
 }
 
 // ? In the Middle
@@ -148,7 +148,7 @@ void search(Link_list *l , int x){
 void delete(Link_list* l , int pos){
     Node* List_node = l->head; 
     Node* List_node_prev=l->head;
-    if (List_node==NULL || List_node->next==NULL){
+    if (List_node==NULL){
         printf("Invalid position");
         return;
     }
