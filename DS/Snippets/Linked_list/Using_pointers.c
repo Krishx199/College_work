@@ -179,21 +179,21 @@ void delete(Link_list* l , int pos){
 int main(){
     Link_list *l = List_constructor();
 
-    add_beginning(l,11);
-    add_end(l,23);
-    add_middle(l,4,45);
+    // add_beginning(l,11);
+    // add_end(l,23);
+    // add_middle(l,4,45);
 
     display(l);
     
-    // searching for a node
-    int x;
-    printf("Enter value to search and print: ");
-    scanf("%d",&x);
-    search(l,x);
+    // // searching for a node
+    // int x;
+    // printf("Enter value to search and print: ");
+    // scanf("%d",&x);
+    // search(l,x);
 
-    delete(l,0);display(l);
+    // delete(l,0);display(l);
 
-    delete(l,2);display(l);
+    // delete(l,2);display(l);
 
-    delete(l,2);display(l);
+    // delete(l,2);display(l);
 }
