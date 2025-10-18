@@ -1,10 +1,10 @@
 import java.util.*;
 class sum_avg{
-    Scanner sc=new Scanner(System.in);
     int a[]=new int[5];
     int s=0;
     void input(){
-        System.out.print("Enter array elements (5)");
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter array elements (5): ");
         for(int i=0;i<a.length;i++){
             a[i]=sc.nextInt();
         }
@@ -16,24 +16,27 @@ class sum_avg{
         return s;
     }
     double avg(){
-        int sum=sum(a);
-        return sum/a.length;
+        int ssum=sum();
+        return ssum/a.length;
     }
     public static void main(String[]args){
+
         sum_avg obj=new sum_avg();
         obj.input();
-        System.outt.println("Enter 1 for sum of elements \n 0 for Average of elements");
-        int c=sc.nextInt();
+
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter s for sum of elements \t a for Average of elements \t any other key to quit");
+        char c=sc.next().charAt(0);            
         switch(c){
-            case 0:
-                System.out.println("Average of elements is:"+obj.avg());
+            case 'a':
+                System.out.println("Average of elements is: "+obj.avg());
                 break;
-            case 1:
-                System.out.println("Sum of elements is:"+obj.sum());
-                break;   
+            case 's':
+                System.out.println("Sum of elements is: "+obj.sum());
+                break;  
             default:
-                System.out.println("INVALID INPUT!");
+                System.out.println("Exited");                       
                 break;     
-        } 
+            }
     }
 }
