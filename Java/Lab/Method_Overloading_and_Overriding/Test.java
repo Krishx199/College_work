@@ -35,7 +35,7 @@ class B extends Add{
     }
 
     B(int x , int y , int z , int w , int a , int b , int c , int d){  // constructor
-        super(x,y,z,w);
+        super(x,y,z,w);    // use of super keyword to call constructor of parent class
         this.a = a;
         this.b = b;
         this.c = c;
@@ -50,10 +50,10 @@ class Test{
         Add obj1 = new B(1,2,3,4,5,6,7,8);   // Upcasting 
         obj1.display();
 
-        System.out.println(obj1.x);             // we can also access instance variables 
-                                               // of the parent class 
-        System.out.println(obj1.y);           // while upcasting 
-        System.out.println(obj1.z);          //
-        System.out.println(obj1.w);         //
+        System.out.println(obj1.x);             // upcasting allows to call the new definition of the method 
+                                               // 
+        System.out.println(obj1.y);           // we can also access instance variables 
+        System.out.println(obj1.z);          // of parent class while upcasting
+        System.out.println(obj1.w);         // unless there are two or more instance variables name common in parent and child class
     }
 }
