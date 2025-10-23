@@ -32,6 +32,7 @@ void push(int x){
             newnode->next=cq.front;
             cq.rear->next=newnode;
             cq.rear=newnode;
+            cq.count++;
 
         }
     }
