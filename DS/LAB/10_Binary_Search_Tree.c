@@ -120,7 +120,7 @@ int main() {
     Node* root = NULL;
     
     // Insert nodes
-    printf("Inserting nodes: 50, 30, 70, 20, 40, 60, 80\n");
+    printf("Inserting nodes: 50, 30, 70, 20,\n");
     root = insert(root, 50);
     root = insert(root, 30);
     root = insert(root, 70);
