@@ -17,7 +17,7 @@ class B extends A{
     }
 }
 
-class main{
+class Test{
     public static void main(String args[]){
         B obj = new B();
         obj.m();

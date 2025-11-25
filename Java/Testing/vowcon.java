@@ -57,6 +57,7 @@ class vowcon
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter the sentence: ");
         s=sc.nextLine().trim().toUpperCase();
+        sc.close();
 
         char l=s.charAt(s.length()-1);
         if(l=='.'|| l=='?'|| l=='!')

@@ -4,6 +4,7 @@ class pal {
         System.out.print("Enter a String : ");
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
+        sc.close();
 
         int i=0 ,j=s.length()-1;
         boolean flag = true;

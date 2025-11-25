@@ -8,6 +8,7 @@ class sum_avg{
         for(int i=0;i<a.length;i++){
             a[i]=sc.nextInt();
         }
+        sc.close();
     }
     int sum(){
         for(int i=0;i<a.length;i++){
@@ -26,7 +27,8 @@ class sum_avg{
 
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter s for sum of elements \t a for Average of elements \t any other key to quit");
-        char c=sc.next().charAt(0);            
+        char c=sc.next().charAt(0);
+        sc.close();          
         switch(c){
             case 'a':
                 System.out.println("Average of elements is: "+obj.avg());

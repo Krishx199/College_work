@@ -29,6 +29,7 @@ class sum{
         int r = sc.nextInt();
         int s = sc.nextInt();
         Add obj = new Add(p,q,r,s);
+        sc.close();
 
         System.out.println(obj.add2(obj.x , obj.y));
 
