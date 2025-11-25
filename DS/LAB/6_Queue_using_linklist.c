@@ -15,7 +15,7 @@ typedef struct queue{
 
 queue q = {NULL,NULL,0};
 
-void push(int x){
+void enqueue(int x){
     node* newnode = malloc(sizeof(node));
     newnode->val = x;
     newnode->next = NULL;
@@ -34,17 +34,17 @@ void push(int x){
     }
 }
 
-void pop(){
+void Dequeue(){
     if (q.count==0) printf("Underflow\n");
     else{
         if (q.front==q.rear){
-            printf("Popped %d\n",q.front->val);
+            printf("Dequeued %d\n",q.front->val);
             q.front=q.front->next;
             q.rear=q.rear->next;
             q.count--;
         }
         else{
-            printf("Popped %d\n",q.front->val);
+            printf("Dequeued %d\n",q.front->val);
             q.front=q.front->next;
             q.count--;
         }
@@ -59,19 +59,19 @@ void peek(){
 }
 
 int main(){
-    for (int i=0 ; i<5 ; i++){   // pushing elements
-        push(i+1);
+    for (int i=0 ; i<5 ; i++){   // enqueueing elements
+        enqueue(i+1);
     }
-    push(6);  // testing edge case for overflow 
+    enqueue(6);  // testing edge case for overflow 
 
     peek();
 
-    for (int i=0 ; i<5 ; i++){  // checking pop()
-       pop();
-       peek();
+    for (int i=0 ; i<5 ; i++){  // checking Dequeue()
+       Dequeue();
+    //    peek();
     }
 
-    pop(); // testing edge case for underflow 
+    Dequeue(); // testing edge case for underflow 
 
     peek();
 }

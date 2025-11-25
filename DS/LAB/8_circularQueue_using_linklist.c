@@ -15,7 +15,7 @@ typedef struct cqueue{
 
 cqueue cq = {NULL,NULL,0};
 
-void push(int x){
+void enqueue(int x){
     node* newnode = malloc(sizeof(node));
     newnode->val=x;
     newnode->next=NULL;
@@ -38,17 +38,17 @@ void push(int x){
     }
 }
 
-void pop(){
+void dequeue(){
     if (cq.front==NULL) printf("Underflow\n");
     else{
         if (cq.front==cq.rear){
-            printf("Popped %d\n",cq.front->val);
+            printf("dequeueped %d\n",cq.front->val);
             cq.front=NULL;
             cq.rear=NULL;
             cq.count--;
         }
         else{
-            printf("Popped %d\n",cq.front->val);
+            printf("dequeueped %d\n",cq.front->val);
             cq.front=cq.front->next;
             cq.rear->next=cq.front;
             cq.count--;
@@ -63,10 +63,10 @@ void peek(){
     
 
 int main(){
-    push(1);
-    push(2);
-    push(3);
-    push(4);
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+    enqueue(4);
 
     // node* curr=cq.front;
     // int c=1;
@@ -78,21 +78,21 @@ int main(){
 
     peek();
 
-    pop();
-    pop();
+    dequeue();
+    dequeue();
 
-    push(5);
-    push(6);
-
-    peek();
-
-    pop();
-    pop();
+    enqueue(5);
+    enqueue(6);
 
     peek();
 
-    pop();
-    pop();
+    dequeue();
+    dequeue();
+
+    peek();
+
+    dequeue();
+    dequeue();
 
     peek();
 }
